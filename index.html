@@ -10,162 +10,53 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{background:#06090f !important;color-scheme:dark;}
-html,body{
-  min-height:100vh;background:#06090f !important;background-color:#06090f !important;
-  font-family:'DM Sans',sans-serif;color:#f1f5f9;
-  overflow-x:hidden;-webkit-font-smoothing:antialiased;
-}
-.outer{
-  min-height:100vh;width:100%;
-  display:flex;align-items:center;justify-content:center;
-  padding:32px 20px;
-}
-body::before{
-  content:'';position:fixed;inset:0;
-  background:
-    radial-gradient(ellipse 80% 50% at 50% -5%,rgba(249,115,22,0.15) 0%,transparent 60%),
-    radial-gradient(ellipse 50% 35% at 50% 110%,rgba(168,85,247,0.07) 0%,transparent 60%);
-  pointer-events:none;z-index:0;
-}
-
-.wrap{
-  width:100%;max-width:400px;
-  display:flex;flex-direction:column;align-items:center;
-  position:relative;z-index:1;text-align:center;
-  animation:fadeUp 0.4s ease;
-}
+html,body{min-height:100vh;background:#06090f !important;background-color:#06090f !important;font-family:'DM Sans',sans-serif;color:#f1f5f9;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -5%,rgba(249,115,22,0.15) 0%,transparent 60%),radial-gradient(ellipse 50% 35% at 50% 110%,rgba(168,85,247,0.07) 0%,transparent 60%);pointer-events:none;z-index:0;}
+.outer{min-height:100vh;width:100%;display:flex;align-items:center;justify-content:center;padding:32px 20px;}
+.wrap{width:100%;max-width:400px;display:flex;flex-direction:column;align-items:center;position:relative;z-index:1;text-align:center;animation:fadeUp 0.4s ease;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-
-/* LOGO */
-.logo-ring-wrap{
-  position:relative;width:90px;height:90px;
-  display:flex;align-items:center;justify-content:center;
-  margin:0 auto 22px;
-  flex-shrink:0;
-}
+.logo-ring-wrap{position:relative;width:90px;height:90px;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;flex-shrink:0;}
 .lr{position:absolute;border-radius:24px;border:2px solid rgba(249,115,22,0.22);animation:rPulse 2.5s ease-in-out infinite;}
 .lr1{width:106px;height:106px;}
 .lr2{width:96px;height:96px;border-width:1.5px;border-color:rgba(249,115,22,0.11);animation-delay:0.55s;}
 @keyframes rPulse{0%,100%{opacity:0.5;transform:scale(0.95)}50%{opacity:1;transform:scale(1.05)}}
-.logo-glow{
-  position:absolute;width:90px;height:90px;border-radius:22px;
-  background:radial-gradient(circle,rgba(249,115,22,0.28) 0%,transparent 70%);
-  filter:blur(10px);animation:gPulse 2.5s ease-in-out infinite;
-}
+.logo-glow{position:absolute;width:90px;height:90px;border-radius:22px;background:radial-gradient(circle,rgba(249,115,22,0.28) 0%,transparent 70%);filter:blur(10px);animation:gPulse 2.5s ease-in-out infinite;}
 @keyframes gPulse{0%,100%{opacity:0.5}50%{opacity:1}}
-
-.logo-icon-wrap{
-  width:86px;height:86px;border-radius:22px;
-  background:linear-gradient(135deg,#1a2540,#0e1825);
-  border:1.5px solid rgba(249,115,22,0.2);
-  display:flex;align-items:center;justify-content:center;
-  position:relative;z-index:1;
-  box-shadow:0 8px 28px rgba(0,0,0,0.5),0 0 20px rgba(249,115,22,0.2);
-  animation:floatBob 4s ease-in-out infinite;
-  overflow:hidden;
-}
+.logo-icon-wrap{width:86px;height:86px;border-radius:22px;background:linear-gradient(135deg,#1a2540,#0e1825);border:1.5px solid rgba(249,115,22,0.2);display:flex;align-items:center;justify-content:center;position:relative;z-index:1;box-shadow:0 8px 28px rgba(0,0,0,0.5),0 0 20px rgba(249,115,22,0.2);animation:floatBob 4s ease-in-out infinite;overflow:hidden;}
 .logo-icon-wrap svg{width:58px;height:58px;}
 @keyframes floatBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-
-/* BADGE */
-.rewards-badge{
-  display:inline-flex;align-items:center;gap:6px;
-  background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.25);
-  border-radius:99px;padding:5px 14px;
-  font-size:11.5px;font-weight:700;color:#fb923c;
-  margin-bottom:18px;letter-spacing:0.2px;
-}
-
-/* HEADLINE */
-.headline{
-  font-family:'Sora',sans-serif;font-size:32px;font-weight:900;
-  color:#fff;margin-bottom:8px;letter-spacing:-0.5px;line-height:1.1;
-}
+.rewards-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.25);border-radius:99px;padding:5px 14px;font-size:11.5px;font-weight:700;color:#fb923c;margin-bottom:18px;letter-spacing:0.2px;}
+.headline{font-family:'Sora',sans-serif;font-size:32px;font-weight:900;color:#fff;margin-bottom:8px;letter-spacing:-0.5px;line-height:1.1;}
 .headline .accent{color:#f97316;}
 .sub{font-size:14px;color:#8da0b8;margin-bottom:26px;line-height:1.55;}
-
-/* NOTE BOX */
-.note-box{
-  width:100%;background:#0c1220;border-radius:16px;
-  border:1px solid rgba(249,115,22,0.18);
-  padding:18px;margin-bottom:26px;text-align:left;
-  position:relative;overflow:hidden;
-}
-.note-box::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(249,115,22,0.5),transparent);
-}
-.note-label{
-  font-size:11px;font-weight:800;color:#fb923c;text-transform:uppercase;
-  letter-spacing:0.8px;display:flex;align-items:center;gap:6px;margin-bottom:14px;
-}
-.ndot{
-  width:7px;height:7px;border-radius:50%;background:#f97316;
-  box-shadow:0 0 6px #f97316;flex-shrink:0;
-  animation:dBlink 1.4s ease-in-out infinite;
-}
+.note-box{width:100%;background:#0c1220;border-radius:16px;border:1px solid rgba(249,115,22,0.18);padding:18px;margin-bottom:26px;text-align:left;position:relative;overflow:hidden;}
+.note-box::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(249,115,22,0.5),transparent);}
+.note-label{font-size:11px;font-weight:800;color:#fb923c;text-transform:uppercase;letter-spacing:0.8px;display:flex;align-items:center;gap:6px;margin-bottom:14px;}
+.ndot{width:7px;height:7px;border-radius:50%;background:#f97316;box-shadow:0 0 6px #f97316;flex-shrink:0;animation:dBlink 1.4s ease-in-out infinite;}
 @keyframes dBlink{0%,100%{opacity:1}50%{opacity:0.25}}
 .note-item{display:flex;align-items:flex-start;gap:10px;margin-bottom:12px;}
 .note-item:last-child{margin-bottom:0;}
-.nicon{
-  width:22px;height:22px;border-radius:50%;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;
-  font-size:11px;font-weight:700;margin-top:1px;
-}
+.nicon{width:22px;height:22px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;margin-top:1px;}
 .nicon.info{background:rgba(249,115,22,0.15);border:1px solid rgba(249,115,22,0.3);color:#f97316;}
 .nicon.check{background:rgba(34,197,94,0.15);border:1px solid rgba(34,197,94,0.3);color:#22c55e;}
 .ntext{font-size:13px;color:#8da0b8;line-height:1.5;}
 .ntext strong{color:#f1f5f9;}
-
-/* BUTTONS */
-.btn-yes{
-  width:100%;padding:19px;border-radius:14px;
-  background:linear-gradient(135deg,#ea580c,#f97316,#fb923c);
-  color:#fff;font-family:'Sora',sans-serif;font-size:16px;font-weight:800;
-  border:none;cursor:pointer;margin-bottom:10px;
-  box-shadow:0 0 28px rgba(249,115,22,0.5),0 4px 16px rgba(0,0,0,0.4);
-  -webkit-tap-highlight-color:transparent;
-  position:relative;overflow:hidden;transition:all 0.2s ease;
-  animation:yesPulse 2.8s ease-in-out infinite;
-}
-.btn-yes::after{
-  content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.18),transparent);
-  animation:shine 3s linear 1.5s infinite;
-}
+.btn-yes{width:100%;padding:19px;border-radius:14px;background:linear-gradient(135deg,#ea580c,#f97316,#fb923c);color:#fff;font-family:'Sora',sans-serif;font-size:16px;font-weight:800;border:none;cursor:pointer;margin-bottom:10px;-webkit-tap-highlight-color:transparent;position:relative;overflow:hidden;transition:all 0.2s ease;animation:yesPulse 2.8s ease-in-out infinite;}
+.btn-yes::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.18),transparent);animation:shine 3s linear 1.5s infinite;}
 @keyframes shine{0%{left:-60%}100%{left:160%}}
-@keyframes yesPulse{
-  0%,100%{box-shadow:0 0 28px rgba(249,115,22,0.5),0 4px 16px rgba(0,0,0,0.4);}
-  50%{box-shadow:0 0 46px rgba(249,115,22,0.7),0 4px 16px rgba(0,0,0,0.4);}
-}
+@keyframes yesPulse{0%,100%{box-shadow:0 0 28px rgba(249,115,22,0.5),0 4px 16px rgba(0,0,0,0.4);}50%{box-shadow:0 0 46px rgba(249,115,22,0.7),0 4px 16px rgba(0,0,0,0.4);}}
 .btn-yes:hover{transform:translateY(-1px) scale(1.01);animation:none;}
 .btn-yes:active{transform:scale(0.98);animation:none;}
-
-.btn-no{
-  width:100%;padding:17px;border-radius:14px;
-  background:rgba(255,255,255,0.04);
-  border:1.5px solid rgba(255,255,255,0.1);
-  color:#8da0b8;font-family:'DM Sans',sans-serif;
-  font-size:15px;font-weight:600;cursor:pointer;
-  transition:all 0.2s ease;-webkit-tap-highlight-color:transparent;
-}
+.btn-no{width:100%;padding:17px;border-radius:14px;background:rgba(255,255,255,0.04);border:1.5px solid rgba(255,255,255,0.1);color:#8da0b8;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:all 0.2s ease;-webkit-tap-highlight-color:transparent;}
 .btn-no:hover{background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.2);}
-
-/* INELIGIBLE */
 #screen-no{display:none;flex-direction:column;align-items:center;animation:fadeUp 0.35s ease;}
 #screen-no.active{display:flex;}
 .inelig-icon{font-size:54px;margin-bottom:20px;}
 .inelig-headline{font-family:'Sora',sans-serif;font-size:24px;font-weight:900;color:#fff;margin-bottom:10px;letter-spacing:-0.4px;}
 .inelig-sub{font-size:14px;color:#8da0b8;line-height:1.55;margin-bottom:32px;}
-.btn-back{
-  padding:14px 28px;border-radius:12px;
-  background:rgba(255,255,255,0.05);border:1.5px solid rgba(255,255,255,0.1);
-  color:#8da0b8;font-family:'DM Sans',sans-serif;
-  font-size:14px;font-weight:600;cursor:pointer;transition:all 0.2s ease;
-}
+.btn-back{padding:14px 28px;border-radius:12px;background:rgba(255,255,255,0.05);border:1.5px solid rgba(255,255,255,0.1);color:#8da0b8;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.2s ease;}
 .btn-back:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.2);}
-
-footer{margin-top:40px;text-align:center;}
+footer{margin-top:40px;text-align:center;width:100%;}
 .footer-links{font-size:12px;color:#64748b;margin-bottom:5px;}
 .footer-links a{color:#64748b;text-decoration:none;}
 .footer-links a:hover{color:#fb923c;}
@@ -174,39 +65,26 @@ footer{margin-top:40px;text-align:center;}
 </style>
 </head>
 <body>
-
 <div class="outer">
 <div class="wrap">
 
-  <!-- SCREEN: AGE CHECK -->
   <div id="screen-yes-no">
-
     <div class="logo-ring-wrap">
       <div class="lr lr1"></div>
       <div class="lr lr2"></div>
       <div class="logo-glow"></div>
       <div class="logo-icon-wrap">
-        <!-- Generic reward/gift SVG icon -->
         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Gift box body -->
           <rect x="8" y="30" width="48" height="26" rx="5" fill="#1e2d42"/>
           <rect x="8" y="30" width="48" height="26" rx="5" stroke="rgba(249,115,22,0.35)" stroke-width="1.5"/>
-          <!-- Gift box lid -->
           <rect x="5" y="22" width="54" height="11" rx="4" fill="#1a2540"/>
           <rect x="5" y="22" width="54" height="11" rx="4" stroke="rgba(249,115,22,0.35)" stroke-width="1.5"/>
-          <!-- Ribbon vertical -->
           <rect x="28.5" y="22" width="7" height="34" rx="3" fill="#f97316"/>
-          <!-- Ribbon horizontal on lid -->
           <rect x="5" y="25.5" width="54" height="5" rx="2.5" fill="#fb923c"/>
-          <!-- Bow left -->
           <path d="M32 22 C32 22 18 11 13 17 C8 23 22 28 32 22Z" fill="#f97316"/>
-          <!-- Bow right -->
           <path d="M32 22 C32 22 46 11 51 17 C56 23 42 28 32 22Z" fill="#ea580c"/>
-          <!-- Bow knot -->
           <circle cx="32" cy="22" r="4" fill="#fb923c"/>
-          <!-- Star sparkle top right -->
           <path d="M52 10 L53.2 13.2 L56.5 13.2 L54 15.2 L55 18.5 L52 16.5 L49 18.5 L50 15.2 L47.5 13.2 L50.8 13.2 Z" fill="#fbbf24" opacity="0.9"/>
-          <!-- Small sparkle top left -->
           <circle cx="14" cy="12" r="2" fill="#fbbf24" opacity="0.6"/>
           <circle cx="12" cy="16" r="1.2" fill="#fb923c" opacity="0.5"/>
         </svg>
@@ -214,7 +92,6 @@ footer{margin-top:40px;text-align:center;}
     </div>
 
     <div class="rewards-badge">&#9889; Exclusive Reward Offers</div>
-
     <div class="headline">Are you <span class="accent">21+</span>?</div>
     <div class="sub">Confirm your age to unlock available reward offers in your region.</div>
 
@@ -245,10 +122,8 @@ footer{margin-top:40px;text-align:center;}
       </div>
       <div class="footer-copy">&copy; 2025 All rights reserved.</div>
     </footer>
-
   </div>
 
-  <!-- SCREEN: INELIGIBLE -->
   <div id="screen-no">
     <div class="inelig-icon">&#128533;</div>
     <div class="inelig-headline">Sorry, you&rsquo;re not eligible</div>
@@ -257,27 +132,36 @@ footer{margin-top:40px;text-align:center;}
   </div>
 
 </div>
-
+</div>
 <script>
 /*
   ─────────────────────────────────────────────
-  CONFIGURATION — edit these two URLs only
-  ─────────────────────────────────────────────
-  YES_URL = page for users who are 21+
-  NO_URL  = page for users under 21
-             Leave NO_URL empty ('') to show the built-in ineligible screen.
+  CONFIGURATION — edit only these two URLs
+  YES_URL = lander for 21+ users
+  NO_URL  = lander for under 21 (leave '' for built-in screen)
   ─────────────────────────────────────────────
 */
 var YES_URL = 'https://teststarapp.rwrd.workers.dev/';
 var NO_URL  = 'https://teststarapp.rwrd.workers.dev/';
 
+function getS2() {
+  return new URLSearchParams(window.location.search).get('s2') || '';
+}
+
+function appendS2(url) {
+  var s2 = getS2();
+  if (!s2) return url;
+  var sep = url.indexOf('?') !== -1 ? '&' : '?';
+  return url + sep + 's2=' + encodeURIComponent(s2);
+}
+
 function goYes() {
-  if (YES_URL) window.location.href = YES_URL;
+  if (YES_URL) window.location.href = appendS2(YES_URL);
 }
 
 function goNo() {
   if (NO_URL) {
-    window.location.href = NO_URL;
+    window.location.href = appendS2(NO_URL);
   } else {
     document.getElementById('screen-yes-no').style.display = 'none';
     document.getElementById('screen-no').classList.add('active');
