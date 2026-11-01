@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#0A0A0A">
@@ -8,8 +7,8 @@
 <meta name="referrer" content="no-referrer">
 <title>Tap to continue</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;800&amp;display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #0A0A0A;
@@ -17,7 +16,6 @@
     --muted: #8B8B8B;
     --green: #1FEA6A;
     --green-deep: #00D45C;
-    --pumpkin: #FF7A1A;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
   html, body { height: 100%; background: var(--bg); }
@@ -28,7 +26,7 @@
     overflow: hidden;
   }
 
-  /* Background glows: green bloom in the middle, ember glow at the bottom */
+  /* Background glow: green bloom in the middle */
   .stage {
     position: relative;
     min-height: 100vh;
@@ -40,7 +38,7 @@
     padding: env(safe-area-inset-top, 0px) 22px env(safe-area-inset-bottom, 0px);
     background:
       radial-gradient(ellipse 70% 38% at 50% 34%, rgba(20, 110, 55, .42), transparent 70%),
-      radial-gradient(ellipse 80% 22% at 50% 100%, rgba(255, 122, 26, .22), transparent 75%),
+      radial-gradient(ellipse 80% 22% at 50% 100%, rgba(0, 180, 90, .14), transparent 75%),
       var(--bg);
   }
 
@@ -98,42 +96,17 @@
     50%      { box-shadow: 0 0 0 1px rgba(255,255,255,.12) inset, 0 14px 60px rgba(0, 220, 100, .55); }
   }
 
-  /* Corner pumpkins */
-  .pk {
-    position: fixed;
-    font-size: 40px;
-    line-height: 1;
-    filter: drop-shadow(0 0 16px rgba(255, 122, 26, .55));
-    opacity: .92;
-    pointer-events: none;
-    animation: bob 5s ease-in-out infinite;
-  }
-  .pk.tl { top: 15%;  left: 7%;  font-size: 42px; }
-  .pk.tr { top: 17%;  right: 7%; font-size: 36px; animation-delay: -1.6s; }
-  .pk.bl { bottom: 11%; left: 9%;  font-size: 36px; animation-delay: -3s; }
-  .pk.br { bottom: 9%;  right: 8%; font-size: 42px; animation-delay: -.8s; }
-  @keyframes bob {
-    0%, 100% { transform: translateY(0) rotate(-3deg); }
-    50%      { transform: translateY(-10px) rotate(3deg); }
-  }
-
   @media (prefers-reduced-motion: reduce) {
-    .btn, .pk { animation: none; }
+    .btn { animation: none; }
   }
 </style>
 </head>
 <body>
 <main class="stage">
-  <span class="pk tl" aria-hidden="true">🎃</span>
-  <span class="pk tr" aria-hidden="true">🎃</span>
-  <span class="pk bl" aria-hidden="true">🎃</span>
-  <span class="pk br" aria-hidden="true">🎃</span>
-
   <div class="content">
     <h1>Tap to continue</h1>
     <p>Tap the button below to open this page in your browser.</p>
     <button class="btn" id="go" type="button">
-      <span aria-hidden="true">🎃</span>
       <span>Continue</span>
       <span class="arrow" aria-hidden="true">→</span>
     </button>
@@ -196,5 +169,4 @@
   document.getElementById("go").addEventListener("click", openExternal);
 })();
 </script>
-</body>
-</html>
+</body></html>
